@@ -74,9 +74,9 @@ function displayBugs() {
     
     //table
     var bugTable = document.getElementById('bugTable');
-    bugTable.innerHTML = "";
+    bugTable.innerHTML = ""; 
 
-    if (bugs.length > 0) { //if there are any bugs
+    if (bugs.length > 0) { //if there are any bugs in the list
 
     
         //header
