@@ -10,15 +10,41 @@ body {
     min-height: 100vh;
     display: block;
 }
+.bugTable {
+    border-collapse: collapse;
+    width: auto;
+    margin: 20px;
+}
+.bugTable, th, td {
+    border-style: solid;
 
-#listOfBugs button {
+}
+th {
+    height: 50px;
+}
+td {
+    width: 100px;
+}
+
+.creationDiv {
+    border-style: solid;
+    padding: 20px;
+    height: 100px;
+}
+
+.listOfBugs {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#bugTable button {
     height: 50px;
     width: 300px;
+    
 }
 
-.bugPane {
-    display: inline-block;
-
-}
 
 

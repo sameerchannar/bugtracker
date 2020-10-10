@@ -42,18 +42,30 @@ class Bug {
 
 }
 
-class ResolveButton {
+class ResolveButtons {
     constructor(id) {
         this.button = document.createElement('button');
-        this.button.innerHTML = "Mark Resolved";
-        this.button.onclick = function() {
-            bugs[id].setResolved(true);
-            displayBugs();
+        if (bugs[id].getResolved() == false) {
+            this.button.innerHTML = "Mark Resolved";
+            this.button.onclick = function() {
+                bugs[id].setResolved(true);
+                this.resolveMode = false;
+                displayBugs();
+            }
+        }
+        else {
+            this.button.innerHTML = "Mark Unresolved";
+            this.button.onclick = function() {
+                bugs[id].setResolved(false);
+                this.resolveMode = true;
+                displayBugs();
+            }
         }
     }
     getButton() {
         return this.button;
     }
+    
 }
 
 rows = []
@@ -63,8 +75,10 @@ function displayBugs() {
     bugTable.innerHTML = "";
     for (var i = 0; i < bugs.length; i++) {
         var newRow = bugTable.insertRow();
+
+        //bug information
         var id = newRow.insertCell();
-        id.innerHTML = bugs[i].getId();
+        id.innerHTML = bugs[i].getId() + 1;
         var status = newRow.insertCell();
         status.innerHTML = bugs[i].getResolved();
         var summary = newRow.insertCell();
@@ -74,9 +88,10 @@ function displayBugs() {
         var time = newRow.insertCell();
         time.innerHTML = bugs[i].getTime();
         
-        //button
-        var btn = new ResolveButton(i);
+        //buttons
+        var btn = new ResolveButtons(i);
         newRow.append(btn.getButton());
+        
     }
     
 }
@@ -97,6 +112,8 @@ function createBug() {
     var dateTime = date+' '+time;
     var newBug = new Bug(dateTime, document.getElementById("descriptionField").value, document.getElementById("summaryField").value);
     bugs.push(newBug);
+    document.getElementById("descriptionField").value = "";
+    document.getElementById("summaryField").value = "";
     displayBugs();
 }
 
