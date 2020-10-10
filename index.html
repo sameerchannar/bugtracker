@@ -15,18 +15,20 @@
         <h1>Bugtracker</h1>
 
         <script src="index.js"></script>
-        <div id = "creationDiv" class = "creationDiv">
-            <h3>Report New Bug</h3>
-            <label id="summary" for = "summaryField">New Bug Nickname:</label>
-            <input id="summaryField" name="summaryField"></input>
-            <label id="description" for = "descriptionField">Describe the new issue in detail: </label>
-            <input id="descriptionField" name="descriptionField"></input>
-            <button id="submit" onclick=createBug()>Report New Bug</button>
+        <div id="creationContainer" class="creationContainer">
+            <div id = "creationDiv" class = "creationDiv">
+                <h3>Report New Bug</h3>
+                <label id="summary" for = "summaryField">New Bug Nickname:</label>
+                <input id="summaryField" name="summaryField"></input>
+                <label id="description" for = "descriptionField">Describe the new issue in detail: </label>
+                <input id="descriptionField" name="descriptionField"></input>
+                <button id="submit" onclick=createBug()>Report New Bug</button>
+            </div>
         </div>
 
         <div id="listOfBugs" class = "listOfBugs">
             <table id="bugTable" class="bugTable">
-
+                
             </table>
         </div>
 
