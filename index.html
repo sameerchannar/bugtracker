@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bugtracker</title>
+        <link rel="stylesheet" href="styles.css">
+        <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+
+
+    </head>
+    <body>
+
+        <h1>Bugtracker</h1>
+
+        <script src="index.js"></script>
+        <div id = "creationDiv" class = "creationDiv">
+            <label id="summary" for = "summaryField">Bug Nickname:</label>
+            <input id="summaryField" name="summaryField"></input>
+            <label id="description" for = "descriptionField">Describe the issue in detail: </label>
+            <input id="descriptionField" name="descriptionField"></input>
+            <button id="submit" onclick=createBug()>Report Bug</button>
+        </div>
+
+        <div id="listOfBugs" class = "listOfBugs">
+            <table id="bugTable" class="bugTable">
+
+            </table>
+        </div>
+
+    </body>
+</html>
